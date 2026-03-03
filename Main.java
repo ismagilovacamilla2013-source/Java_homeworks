@@ -134,7 +134,6 @@ public class Main {
                 } else {
                     table[i][j] = 0;
                 }
-                ;
                 System.out.print(table[i][j] + " ");
             }
             System.out.println();
