@@ -1,4 +1,4 @@
-package lesson_4;
+package com.example.lesson_4;
 
 public class Plate {
     private int foodAmount;

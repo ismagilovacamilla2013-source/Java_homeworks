@@ -1,4 +1,4 @@
-package lesson_5;
+package com.example.lesson_5;
 
 public class MyArrayDataException extends Exception {
     private int row;

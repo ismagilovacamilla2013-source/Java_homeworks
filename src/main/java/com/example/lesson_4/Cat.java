@@ -1,4 +1,4 @@
-package lesson_4;
+package com.example.lesson_4;
 
 public class Cat extends Animal{
     private static final int MAX_RUN = 200;
