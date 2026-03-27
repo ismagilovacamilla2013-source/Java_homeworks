@@ -1,4 +1,4 @@
-package lesson_3;
+package com.example.lesson_3;
 
 public class Park {
     private String name;

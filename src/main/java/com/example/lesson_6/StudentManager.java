@@ -1,4 +1,4 @@
-package lesson_6;
+package com.example.lesson_6;
 
 import java.util.*;
 public class StudentManager {
