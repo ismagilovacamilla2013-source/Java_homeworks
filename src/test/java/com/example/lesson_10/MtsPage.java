@@ -56,18 +56,22 @@ public class MtsPage {
         option.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(expectedFieldLocator));
     }
+
     public MtsPage selectConnectionService() {
         selectService(connectionOption, phoneField);
         return this;
     }
+
     public MtsPage selectHomeInternetService() {
         selectService(homeInternetOption, homeInternetPhoneField);
         return this;
     }
+
     public MtsPage selectInstallmentService() {
         selectService(installmentOption, installmentAccountField);
         return this;
     }
+
     public MtsPage selectDebtService() {
         selectService(debtOption, debtAccountField);
         return this;
@@ -80,12 +84,14 @@ public class MtsPage {
         element.sendKeys(Keys.TAB);
         return this;
     }
+
     public MtsPage enterAmount(String amount) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(amountField));
         element.clear();
         element.sendKeys(amount);
         return this;
     }
+
     public MtsPage enterEmail(String email) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(emailField));
         element.clear();
@@ -96,39 +102,51 @@ public class MtsPage {
     public String getPhonePlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(phoneField)).getAttribute("placeholder");
     }
+
     public String getAmountPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(amountField)).getAttribute("placeholder");
     }
+
     public String getEmailPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(emailField)).getAttribute("placeholder");
     }
+
     public String getHomeInternetPhonePlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(homeInternetPhoneField)).getAttribute("placeholder");
     }
+
     public String getHomeInternetAmountPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(homeInternetAmountField)).getAttribute("placeholder");
     }
+
     public String getHomeInternetEmailPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(homeInternetEmailField)).getAttribute("placeholder");
     }
+
     public String getInstallmentAccountPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(installmentAccountField)).getAttribute("placeholder");
     }
+
     public String getInstallmentAmountPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(installmentAmountField)).getAttribute("placeholder");
     }
+
     public String getInstallmentEmailPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(installmentEmailField)).getAttribute("placeholder");
     }
+
     public String getDebtAccountPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(debtAccountField)).getAttribute("placeholder");
     }
+
     public String getDebtAmountPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(debtAmountField)).getAttribute("placeholder");
     }
+
     public String getDebtEmailPlaceholder() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(debtEmailField)).getAttribute("placeholder");
     }
+
     public PaymentModal clickContinue() {
         WebElement button = wait.until(ExpectedConditions.elementToBeClickable(continueButton));
         button.click();
