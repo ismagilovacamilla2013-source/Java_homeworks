@@ -1,58 +1,57 @@
 package com.example.lesson_7;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import org.testng.Assert;
 
 public class FactorialCalculatorTest {
+
     private FactorialCalculator factorialCalculator;
 
-    @BeforeEach
-    void setUp() {
+    @BeforeMethod
+    public void setUp() {
         factorialCalculator = new FactorialCalculator();
+        System.out.println("Создан экземпляр FactorialCalculator для теста");
     }
 
     @Test
-    @DisplayName("Тест факториала 0: 0! = 1")
-    void testFactorialZero() {
-        Assertions.assertEquals(1, factorialCalculator.factorial(0));
+    public void testFactorialZero() {
+        Assert.assertEquals(factorialCalculator.factorial(0), 1);
+        System.out.println("Тест факториала 0 пройден");
     }
 
     @Test
-    @DisplayName("Тест факториала 1: 1! = 1")
-    void testFactorialOne() {
-        Assertions.assertEquals(1, factorialCalculator.factorial(1));
+    public void testFactorialOne() {
+        Assert.assertEquals(factorialCalculator.factorial(1), 1);
+        System.out.println("Тест факториала 1 пройден");
     }
 
     @Test
-    @DisplayName("Тест факториала 2: 2! = 2")
-    void testFactorialTwo() {
-        Assertions.assertEquals(2, factorialCalculator.factorial(2));
+    public void testFactorialTwo() {
+        Assert.assertEquals(factorialCalculator.factorial(2), 2);
+        System.out.println("Тест факториала 2 пройден");
     }
 
     @Test
-    @DisplayName("Тест факториала 3: 3! = 6")
-    void testFactorialThree() {
-        Assertions.assertEquals(6, factorialCalculator.factorial(3));
+    public void testFactorialThree() {
+        Assert.assertEquals(factorialCalculator.factorial(3), 6);
+        System.out.println("Тест факториала 3 пройден");
     }
 
     @Test
-    @DisplayName("Тест факториала 4: 4! = 24")
-    void testFactorialFour() {
-        Assertions.assertEquals(24, factorialCalculator.factorial(4));
+    public void testFactorialFour() {
+        Assert.assertEquals(factorialCalculator.factorial(4), 24);
+        System.out.println("Тест факториала 4 пройден");
     }
 
     @Test
-    @DisplayName("Тест факториала 5: 5! = 120")
-    void testFactorialFive() {
-        Assertions.assertEquals(120, factorialCalculator.factorial(5));
+    public void testFactorialFive() {
+        Assert.assertEquals(factorialCalculator.factorial(5), 120);
+        System.out.println("Тест факториала 5 пройден");
     }
 
-    @Test
-    @DisplayName("Тест факториала отрицательного числа: ожидается исключение")
-    void testFactorialNegative() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            factorialCalculator.factorial(-1);
-        });
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testFactorialNegative() {
+        factorialCalculator.factorial(-1);
+        System.out.println("Тест на отрицательное число пройден");
     }
 }
